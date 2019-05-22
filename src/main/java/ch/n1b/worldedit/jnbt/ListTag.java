@@ -22,8 +22,7 @@ package ch.n1b.worldedit.jnbt;
 import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
-
-import static com.google.common.base.Preconditions.checkNotNull;
+import java.util.Objects;
 
 /**
  * The {@code TAG_List} tag.
@@ -41,7 +40,7 @@ public final class ListTag extends Tag {
      */
     public ListTag(Class<? extends Tag> type, List<? extends Tag> value) {
         super();
-        checkNotNull(value);
+        Objects.requireNonNull(value);
         this.type = type;
         this.value = Collections.unmodifiableList(value);
     }

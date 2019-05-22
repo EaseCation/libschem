@@ -26,7 +26,7 @@ import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import java.util.Objects;
 
 /**
  * This class writes <strong>NBT</strong>, or <strong>Named Binary Tag</strong>
@@ -65,8 +65,8 @@ public final class NBTOutputStream implements Closeable {
      *             if an I/O error occurs.
      */
     public void writeNamedTag(String name, Tag tag) throws IOException {
-        checkNotNull(name);
-        checkNotNull(tag);
+        Objects.requireNonNull(name);
+        Objects.requireNonNull(tag);
 
         int type = NBTUtils.getTypeCode(tag.getClass());
         byte[] nameBytes = name.getBytes(NBTConstants.CHARSET);

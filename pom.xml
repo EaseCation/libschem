@@ -8,29 +8,6 @@
     <artifactId>libschem</artifactId>
     <version>0.4.0</version>
 
-    <repositories>
-        <!-- bukkit is dead! long live spigot! -->
-        <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <!--Spigot-API-->
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.8-R0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.n1b.common-n1b</groupId>
-            <artifactId>common-n1b</artifactId>
-            <version>0.3.9</version>
-        </dependency>
-    </dependencies>
-
     <build>
         <extensions>
             <!-- Enabling the use of Wagon file -->

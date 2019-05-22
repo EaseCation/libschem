@@ -6,6 +6,7 @@ import ch.n1b.worldedit.schematic.schematic.SchematicFormat;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * API for libschem, simple Facade
@@ -13,6 +14,10 @@ import java.io.IOException;
  * @author Thomas
  */
 public class LibschemAPI {
+
+    public static Cuboid loadSchematic(InputStream inputStream) throws IOException, DataException {
+        return SchematicFormat.MCEDIT.load(inputStream);
+    }
 
     public static Cuboid loadSchematic(File file) throws IOException, DataException {
         return SchematicFormat.MCEDIT.load(file);

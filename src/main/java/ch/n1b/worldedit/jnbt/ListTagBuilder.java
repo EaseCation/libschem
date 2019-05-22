@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import java.util.Objects;
 
 /**
  * Helps create list tags.
@@ -40,7 +40,7 @@ public class ListTagBuilder {
      * @param type of tag contained in this list
      */
     ListTagBuilder(Class<? extends Tag> type) {
-        checkNotNull(type);
+        Objects.requireNonNull(type);
         this.type = type;
         this.entries = new ArrayList<Tag>();
     }
@@ -52,7 +52,7 @@ public class ListTagBuilder {
      * @return this object
      */
     public ListTagBuilder add(Tag value) {
-        checkNotNull(value);
+        Objects.requireNonNull(value);
         if (!type.isInstance(value)) {
             throw new IllegalArgumentException(value.getClass().getCanonicalName() + " is not of expected type " + type.getCanonicalName());
         }
@@ -67,7 +67,7 @@ public class ListTagBuilder {
      * @return this object
      */
     public ListTagBuilder addAll(Collection<? extends Tag> value) {
-        checkNotNull(value);
+        Objects.requireNonNull(value);
         for (Tag v : value) {
             add(v);
         }
@@ -98,7 +98,7 @@ public class ListTagBuilder {
      * @return a new builder
      */
     public static <T extends Tag> ListTagBuilder createWith(T ... entries) {
-        checkNotNull(entries);
+        Objects.requireNonNull(entries);
 
         if (entries.length == 0) {
             throw new IllegalArgumentException("This method needs an array of at least one entry");

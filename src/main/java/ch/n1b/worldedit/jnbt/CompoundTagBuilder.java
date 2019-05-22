@@ -21,8 +21,7 @@ package ch.n1b.worldedit.jnbt;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.google.common.base.Preconditions.checkNotNull;
+import java.util.Objects;
 
 /**
  * Helps create compound tags.
@@ -44,7 +43,7 @@ public class CompoundTagBuilder {
      * @param value the value
      */
     CompoundTagBuilder(Map<String, Tag> value) {
-        checkNotNull(value);
+        Objects.requireNonNull(value);
         this.entries = value;
     }
 
@@ -56,8 +55,8 @@ public class CompoundTagBuilder {
      * @return this object
      */
     public CompoundTagBuilder put(String key, Tag value) {
-        checkNotNull(key);
-        checkNotNull(value);
+        Objects.requireNonNull(key);
+        Objects.requireNonNull(value);
         entries.put(key, value);
         return this;
     }
@@ -176,7 +175,7 @@ public class CompoundTagBuilder {
      * @return this object
      */
     public CompoundTagBuilder putAll(Map<String, ? extends Tag> value) {
-        checkNotNull(value);
+        Objects.requireNonNull(value);
         for (Map.Entry<String, ? extends Tag> entry : value.entrySet()) {
             put(entry.getKey(), entry.getValue());
         }

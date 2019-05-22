@@ -22,8 +22,7 @@ package ch.n1b.worldedit.jnbt;
 import ch.n1b.vector.Vec3D;
 
 import java.util.Map;
-
-import static com.google.common.base.Preconditions.checkNotNull;
+import java.util.Objects;
 
 /**
  * A class which contains NBT-related utility methods.
@@ -161,7 +160,7 @@ public final class NBTUtils {
      * @return a vector
      */
     public static Vec3D toVec3D(ListTag listTag) {
-        checkNotNull(listTag);
+        Objects.requireNonNull(listTag);
         return new Vec3D(listTag.asInt(0), listTag.asInt(1), listTag.asInt(2));
     }
 

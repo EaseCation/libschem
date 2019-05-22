@@ -19,7 +19,7 @@
 
 package ch.n1b.worldedit.jnbt;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import java.util.Objects;
 
 /**
  * A tag that has a name.
@@ -36,8 +36,8 @@ public class NamedTag {
      * @param tag the tag
      */
     public NamedTag(String name, Tag tag) {
-        checkNotNull(name);
-        checkNotNull(tag);
+        Objects.requireNonNull(name);
+        Objects.requireNonNull(tag);
         this.name = name;
         this.tag = tag;
     }

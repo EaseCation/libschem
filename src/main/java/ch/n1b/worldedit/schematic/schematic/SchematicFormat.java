@@ -25,6 +25,7 @@ import ch.n1b.worldedit.schematic.data.DataException;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -124,6 +125,15 @@ public abstract class SchematicFormat {
         }
         return block;
     }
+
+    /**
+     * Loads a schematic from the given file into a CuboidClipboard
+     * @param inputStream The InputStream to load from
+     * @return The CuboidClipboard containing the contents of this schematic
+     * @throws IOException If an error occurs while reading data
+     * @throws DataException if data is not in the correct format
+     */
+    public abstract Cuboid load(InputStream inputStream) throws IOException, DataException;
 
     /**
      * Loads a schematic from the given file into a CuboidClipboard

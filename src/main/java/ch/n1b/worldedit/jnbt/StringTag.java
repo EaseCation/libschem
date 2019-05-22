@@ -19,7 +19,7 @@
 
 package ch.n1b.worldedit.jnbt;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import java.util.Objects;
 
 /**
  * The {@code TAG_String} tag.
@@ -35,7 +35,7 @@ public final class StringTag extends Tag {
      */
     public StringTag(String value) {
         super();
-        checkNotNull(value);
+        Objects.requireNonNull(value);
         this.value = value;
     }
 
