@@ -14,8 +14,8 @@
     </parent>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -42,18 +42,4 @@
         </resources>
     </build>
 
-    <profiles>
-        <profile>
-            <id>java21</id>
-
-            <activation>
-                <jdk>21</jdk>
-            </activation>
-
-            <properties>
-                <maven.compiler.source>21</maven.compiler.source>
-                <maven.compiler.target>21</maven.compiler.target>
-            </properties>
-        </profile>
-    </profiles>
 </project>
